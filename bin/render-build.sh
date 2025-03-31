@@ -5,5 +5,8 @@ set -o errexit
 # Install dependencies
 bundle install
 
+# Create database directory if it doesn't exist
+mkdir -p /tmp
+
 # Run database migrations
-bundle exec rake db:migrate 
+RACK_ENV=production bundle exec rake db:migrate 

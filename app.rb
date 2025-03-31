@@ -3,8 +3,14 @@ require 'sinatra/activerecord'
 require 'sqlite3'
 require_relative 'app/models/topic'
 require_relative 'app/models/post'
+require 'fileutils'
 
-set :database, {adapter: 'sqlite3', database: 'db/app.db'}
+# Configure database based on environment
+db_path = ENV['RACK_ENV'] == 'production' ? '/tmp/app.db' : 'db/app.db'
+set :database, {adapter: 'sqlite3', database: db_path}
+
+# Ensure database directory exists
+FileUtils.mkdir_p(File.dirname(db_path)) unless File.directory?(File.dirname(db_path))
 
 get '/' do
   @topics = Topic.order(created_at: :desc)
