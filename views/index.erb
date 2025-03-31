@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friendchan</title>
+</head>
+<body>
+  <h1>Friendchan</h1>
+  
+  <a href="/topics/new">New Topic</a>
+
+  <h2>Topics</h2>
+  <% @topics.each do |topic| %>
+    <div>
+      <h3><a href="/topics/<%= topic.id %>"><%= topic.title %></a></h3>
+      <% if topic.image_path.present? %>
+        <img src="<%= topic.image_path %>" alt="Topic image" style="max-width: 200px;">
+      <% end %>
+      <p>Created at: <%= topic.created_at %></p>
+    </div>
+  <% end %>
+</body>
+</html> 
