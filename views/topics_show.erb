@@ -10,21 +10,37 @@
   </div>
   
   <div class="topic">
-    <p><%= @topic.content %></p>
-    <% if @topic.image_path %>
-      <img src="<%= @topic.image_path %>" alt="Topic image">
-    <% end %>
-    <small>Posted <%= @topic.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+    <div class="topic-content">
+      <div class="topic-text">
+        <p><%= @topic.content %></p>
+        <small>Posted <%= @topic.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+      </div>
+      <% if @topic.image_path %>
+        <div class="topic-image">
+          <a href="<%= @topic.image_path %>" class="image-link" target="_blank">
+            <img src="<%= @topic.image_path %>" alt="Topic image">
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
   
   <div class="posts">
     <% @topic.posts.each do |post| %>
       <div class="post">
-        <p><%= post.content %></p>
-        <% if post.image_path %>
-          <img src="<%= post.image_path %>" alt="Post image">
-        <% end %>
-        <small>Posted <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+        <div class="post-content">
+          <div class="post-text">
+            <p><%= post.content %></p>
+            <small>Posted <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+          </div>
+          <% if post.image_path %>
+            <div class="post-image">
+              <a href="<%= post.image_path %>" class="image-link" target="_blank">
+                <img src="<%= post.image_path %>" alt="Post image">
+              </a>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

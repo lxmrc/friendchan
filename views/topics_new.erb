@@ -21,8 +21,9 @@
     </div>
     
     <div>
-      <label for="topic_image_path">Image URL:</label>
-      <input type="text" id="topic_image_path" name="topic[image_path]" placeholder="https://example.com/image.jpg">
+      <label for="topic_image_path">Image URL: <span style="color: red;">*</span></label>
+      <input type="url" id="topic_image_path" name="topic[image_path]" placeholder="https://example.com/image.jpg" required>
+      <small style="color: #666;">An image is required to create a topic</small>
     </div>
     
     <button type="submit">[Create Topic]</button>
