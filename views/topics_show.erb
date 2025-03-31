@@ -4,7 +4,10 @@
   <title><%= @topic.title %> - FriendChan</title>
 </head>
 <body>
-  <h1><%= @topic.title %></h1>
+  <div class="nav">
+    <h1><%= @topic.title %></h1>
+    <a href="/">[Back to Topics]</a>
+  </div>
   
   <div class="topic">
     <p><%= @topic.content %></p>
@@ -26,21 +29,21 @@
     <% end %>
   </div>
   
-  <h2>Create New Post</h2>
-  <form action="/topics/<%= @topic.id %>/posts" method="post">
-    <div>
-      <label for="post_content">Content:</label>
-      <textarea id="post_content" name="post[content]"></textarea>
-    </div>
-    
-    <div>
-      <label for="post_image_path">Image URL:</label>
-      <input type="text" id="post_image_path" name="post[image_path]">
-    </div>
-    
-    <button type="submit">Create Post</button>
-  </form>
-  
-  <a href="/">Back to Topics</a>
+  <div class="new-post">
+    <h2>Create New Post</h2>
+    <form action="/topics/<%= @topic.id %>/posts" method="post">
+      <div>
+        <label for="post_content">Content:</label>
+        <textarea id="post_content" name="post[content]" placeholder="Write your reply here..."></textarea>
+      </div>
+      
+      <div>
+        <label for="post_image_path">Image URL:</label>
+        <input type="text" id="post_image_path" name="post[image_path]" placeholder="https://example.com/image.jpg">
+      </div>
+      
+      <button type="submit">[Create Post]</button>
+    </form>
+  </div>
 </body>
 </html> 

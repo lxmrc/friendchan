@@ -4,9 +4,11 @@
   <title>FriendChan</title>
 </head>
 <body>
-  <h1>FriendChan</h1>
-  <a href="/topics/new">Create New Topic</a>
-  
+  <div class="nav">
+    <h1>FriendChan</h1>
+    <a href="/topics/new">[Create New Topic]</a>
+  </div>
+
   <div class="topics">
     <% @topics.each do |topic| %>
       <div class="topic">

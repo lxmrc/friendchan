@@ -4,7 +4,10 @@
   <title>New Topic - FriendChan</title>
 </head>
 <body>
-  <h1>Create New Topic</h1>
+  <div class="nav">
+    <h1>Create New Topic</h1>
+    <a href="/">[Back to Topics]</a>
+  </div>
   
   <form action="/topics" method="post">
     <div>
@@ -14,17 +17,15 @@
     
     <div>
       <label for="topic_content">Content:</label>
-      <textarea id="topic_content" name="topic[content]"></textarea>
+      <textarea id="topic_content" name="topic[content]" placeholder="Write your post here..."></textarea>
     </div>
     
     <div>
       <label for="topic_image_path">Image URL:</label>
-      <input type="text" id="topic_image_path" name="topic[image_path]">
+      <input type="text" id="topic_image_path" name="topic[image_path]" placeholder="https://example.com/image.jpg">
     </div>
     
-    <button type="submit">Create Topic</button>
+    <button type="submit">[Create Topic]</button>
   </form>
-  
-  <a href="/">Back to Topics</a>
 </body>
 </html> 
