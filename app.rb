@@ -17,30 +17,30 @@ get '/' do
   erb :index
 end
 
-get '/topics/new' do
-  erb :topics_new
+get '/threads/new' do
+  erb :threads_new
 end
 
-post '/topics' do
+post '/threads' do
   @topic = Topic.new(params[:topic])
   if @topic.save
     redirect '/'
   else
-    erb :topics_new
+    erb :threads_new
   end
 end
 
-get '/topics/:id' do
+get '/threads/:id' do
   @topic = Topic.find(params[:id])
-  erb :topics_show
+  erb :threads_show
 end
 
-post '/topics/:topic_id/posts' do
+post '/threads/:topic_id/posts' do
   @topic = Topic.find(params[:topic_id])
   @post = @topic.posts.build(params[:post])
   if @post.save
-    redirect "/topics/#{@topic.id}"
+    redirect "/threads/#{@topic.id}"
   else
-    erb :topics_show
+    erb :threads_show
   end
 end

@@ -12,7 +12,7 @@
       <p><%= @topic.content %></p>
     <% end %>
     <% if @topic.image_path.present? %>
-      <img src="<%= @topic.image_path %>" alt="Topic image">
+      <img src="<%= @topic.image_path %>" alt="Thread image">
     <% end %>
     <p class="post-meta"><%= @topic.created_at %></p>
   </div>
@@ -31,7 +31,7 @@
 
   <div class="new-post-form">
     <h3>New Post</h3>
-    <form action="/topics/<%= @topic.id %>/posts" method="post">
+    <form action="/threads/<%= @topic.id %>/posts" method="post">
       <div class="form-group">
         <label for="post_content">Content:</label>
         <textarea id="post_content" name="post[content]" required></textarea>
@@ -46,6 +46,6 @@
     </form>
   </div>
 
-  <a href="/" class="back-link">← Back to Topics</a>
+  <a href="/" class="back-link">← Back to Threads</a>
 </body>
 </html> 

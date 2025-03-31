@@ -7,16 +7,16 @@
 <body>
   <h1>friendchan</h1>
   
-  <a href="/topics/new">Start a Thread</a>
+  <a href="/threads/new">Start a Thread</a>
   <br/>
   <br/>
 
   <div class="topics-grid">
     <% @topics.each do |topic| %>
-      <a href="/topics/<%= topic.id %>" class="topic-item">
+      <a href="/threads/<%= topic.id %>" class="topic-item">
         <h3><%= topic.title %></h3>
         <% if topic.image_path.present? %>
-          <img src="<%= topic.image_path %>" alt="Topic image">
+          <img src="<%= topic.image_path %>" alt="Thread image">
         <% end %>
         <p><%= topic.created_at %></p>
       </a>

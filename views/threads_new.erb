@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>new topic - friendchan</title>
+  <title>new thread - friendchan</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>New Topic</h1>
+  <h1>New Thread</h1>
 
-  <form action="/topics" method="post">
+  <form action="/threads" method="post">
     <div>
       <label for="topic_title">Title:</label>
       <input type="text" id="topic_title" name="topic[title]" required>
@@ -23,9 +23,9 @@
       <input type="url" id="topic_image" name="topic[image_path]" required>
     </div>
 
-    <button type="submit">Create Topic</button>
+    <button type="submit">Create Thread</button>
   </form>
 
-  <a href="/">Back to Topics</a>
+  <a href="/">Back to Threads</a>
 </body>
 </html> 
