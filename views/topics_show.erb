@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @topic.title %> - Friendchan</title>
+  <title><%= @topic.title %> - friendchan</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <h1><%= @topic.title %></h1>
@@ -13,17 +14,16 @@
     <% if @topic.image_path.present? %>
       <img src="<%= @topic.image_path %>" alt="Topic image">
     <% end %>
-    <p>Created at: <%= @topic.created_at %></p>
+    <p><%= @topic.created_at %></p>
   </div>
 
-  <h2>Posts</h2>
   <% @topic.posts.each do |post| %>
     <div>
       <p><%= post.content %></p>
       <% if post.image_path.present? %>
         <img src="<%= post.image_path %>" alt="Post image">
       <% end %>
-      <p>Posted at: <%= post.created_at %></p>
+      <p><%= post.created_at %></p>
     </div>
   <% end %>
 

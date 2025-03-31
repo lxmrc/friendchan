@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Friendchan</title>
+  <title>friendchan</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <h1>friendchan</h1>
   
   <a href="/topics/new">Start a Thread</a>
+  <br/>
+  <br/>
 
-  <% @topics.each do |topic| %>
-    <div>
-      <h3><a href="/topics/<%= topic.id %>"><%= topic.title %></a></h3>
-      <% if topic.image_path.present? %>
-        <img src="<%= topic.image_path %>" alt="Topic image" style="max-width: 200px;">
-      <% end %>
-      <p>Created at: <%= topic.created_at %></p>
-    </div>
-  <% end %>
+  <div class="topics-grid">
+    <% @topics.each do |topic| %>
+      <a href="/topics/<%= topic.id %>" class="topic-item">
+        <h3><%= topic.title %></h3>
+        <% if topic.image_path.present? %>
+          <img src="<%= topic.image_path %>" alt="Topic image">
+        <% end %>
+        <p><%= topic.created_at %></p>
+      </a>
+    <% end %>
+  </div>
 </body>
 </html> 
