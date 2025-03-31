@@ -32,6 +32,9 @@ GEM
     minitest (5.25.5)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.7.4)
+    puma (6.6.0)
+      nio4r (~> 2.0)
     rack (3.1.12)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
@@ -40,6 +43,8 @@ GEM
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
+    rackup (2.2.1)
+      rack (>= 3)
     rake (13.2.1)
     ruby2_keywords (0.0.5)
     securerandom (0.4.1)
@@ -83,7 +88,9 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  puma
   rack
+  rackup
   rake
   sinatra
   sinatra-activerecord
