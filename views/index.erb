@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FriendChan</title>
+</head>
+<body>
+  <h1>FriendChan</h1>
+  <a href="/topics/new">Create New Topic</a>
+  
+  <div class="topics">
+    <% @topics.each do |topic| %>
+      <div class="topic">
+        <h2><a href="/topics/<%= topic.id %>"><%= topic.title %></a></h2>
+        <p><%= topic.content %></p>
+        <% if topic.image_path %>
+          <img src="<%= topic.image_path %>" alt="Topic image">
+        <% end %>
+        <small>Posted <%= topic.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html> 

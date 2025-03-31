@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @topic.title %> - FriendChan</title>
+</head>
+<body>
+  <h1><%= @topic.title %></h1>
+  
+  <div class="topic">
+    <p><%= @topic.content %></p>
+    <% if @topic.image_path %>
+      <img src="<%= @topic.image_path %>" alt="Topic image">
+    <% end %>
+    <small>Posted <%= @topic.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+  </div>
+  
+  <div class="posts">
+    <% @topic.posts.each do |post| %>
+      <div class="post">
+        <p><%= post.content %></p>
+        <% if post.image_path %>
+          <img src="<%= post.image_path %>" alt="Post image">
+        <% end %>
+        <small>Posted <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+      </div>
+    <% end %>
+  </div>
+  
+  <h2>Create New Post</h2>
+  <form action="/topics/<%= @topic.id %>/posts" method="post">
+    <div>
+      <label for="post_content">Content:</label>
+      <textarea id="post_content" name="post[content]"></textarea>
+    </div>
+    
+    <div>
+      <label for="post_image_path">Image URL:</label>
+      <input type="text" id="post_image_path" name="post[image_path]">
+    </div>
+    
+    <button type="submit">Create Post</button>
+  </form>
+  
+  <a href="/">Back to Topics</a>
+</body>
+</html> 
