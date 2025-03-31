@@ -83,6 +83,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  rack
   rake
   sinatra
   sinatra-activerecord
