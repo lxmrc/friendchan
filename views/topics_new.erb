@@ -6,20 +6,20 @@
 <body>
   <h1>New Topic</h1>
 
-  <form action="/topics" method="post" enctype="multipart/form-data">
+  <form action="/topics" method="post">
     <div>
       <label for="topic_title">Title:</label>
       <input type="text" id="topic_title" name="topic[title]" required>
     </div>
 
     <div>
-      <label for="topic_content">Content:</label>
-      <textarea id="topic_content" name="topic[content]" required></textarea>
+      <label for="topic_content">Content (optional):</label>
+      <textarea id="topic_content" name="topic[content]"></textarea>
     </div>
 
     <div>
-      <label for="topic_image">Image:</label>
-      <input type="file" id="topic_image" name="topic[image]" accept="image/*">
+      <label for="topic_image">Image URL:</label>
+      <input type="url" id="topic_image" name="topic[image_path]" required>
     </div>
 
     <button type="submit">Create Topic</button>

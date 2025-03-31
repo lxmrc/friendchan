@@ -7,7 +7,9 @@
   <h1><%= @topic.title %></h1>
   
   <div>
-    <p><%= @topic.content %></p>
+    <% if @topic.content.present? %>
+      <p><%= @topic.content %></p>
+    <% end %>
     <% if @topic.image_path.present? %>
       <img src="<%= @topic.image_path %>" alt="Topic image">
     <% end %>
@@ -33,8 +35,8 @@
     </div>
 
     <div>
-      <label for="post_image">Image:</label>
-      <input type="file" id="post_image" name="post[image]" accept="image/*">
+      <label for="post_image">Image URL:</label>
+      <input type="url" id="post_image" name="post[image_path]">
     </div>
 
     <button type="submit">Create Post</button>
