@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: friendchan
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rackup config.ru -o 0.0.0.0 -p $PORT"
+    envVars:
+      - key: RACK_ENV
+        value: production 
